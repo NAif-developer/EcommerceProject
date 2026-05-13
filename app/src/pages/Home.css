@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Products Section ───────────────────────────── */
+.products-section {
+  padding: 3rem;
+  background: #0f0f0f;
+  min-height: calc(100vh - 105px);
+}
+
+/* ── Category Header Row ────────────────────────── */
+.category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.category-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #e8dcc8;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+/* ── Sort Dropdown ──────────────────────────────── */
+.sort-select {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: #8a7f74;
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s, color 0.2s;
+  appearance: none;
+  padding-right: 2rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238a7f74'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+}
+
+.sort-select:hover,
+.sort-select:focus {
+  border-color: rgba(212, 175, 55, 0.35);
+  color: #d4af37;
+}
+
+.loading-msg,
+.empty-msg {
+  font-family: 'DM Sans', sans-serif;
+  color: #4a4540;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  margin-top: 2rem;
+}
+
+/* ── Product Grid ───────────────────────────────── */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.75rem;
+}
+
+/* ── Product Card (photo-only, hover reveals price) ── */
+.product-card {
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.35s ease;
+}
+
+.product-card:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+  transform: scale(1.06);
+  z-index: 5;
+}
+
+/* ── Product Image ──────────────────────────────── */
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #0f0f0f;
+  display: block;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: transform 0.4s ease;
+}
+.product-card:hover .product-img { transform: scale(1.05); }
+
+/* ── Hover Price Overlay ────────────────────────── */
+.hover-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.9rem 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.7) 60%, transparent 100%);
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  pointer-events: none;
+}
+.product-card:hover .hover-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hover-price-old {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  color: #6e6258;
+  text-decoration: line-through;
+}
+
+.hover-price-sale {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #e8c84a;
+  letter-spacing: 0.03em;
+}
+
+.hover-price-regular {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #d4af37;
+  letter-spacing: 0.03em;
+}
+
+/* ── Modal Overlay ──────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Modal Card ─────────────────────────────────── */
+.modal-card {
+  background: #141414;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 10px;
+  max-width: 780px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.8);
+  animation: slideUp 0.22s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Modal Close ────────────────────────────────── */
+.modal-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #4a4540;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 1;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.15s;
+}
+.modal-close:hover { color: #e8dcc8; }
+
+/* ── Modal Image ─────────────────────────────────── */
+.modal-img {
+  width: 300px;
+  min-width: 300px;
+  object-fit: contain;
+  background: #0f0f0f;
+  padding: 1.75rem;
+  box-sizing: border-box;
+}
+
+/* ── Modal Body ─────────────────────────────────── */
+.modal-body {
+  padding: 2rem 1.75rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  flex: 1;
+}
+
+.modal-sale-badge {
+  display: inline-block;
+  background: rgba(192, 57, 43, 0.12);
+  border: 1px solid rgba(192, 57, 43, 0.35);
+  color: #e74c3c;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.6rem;
+  border-radius: 3px;
+  width: fit-content;
+}
+
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #e8dcc8;
+  margin: 0;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+.modal-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 300;
+  color: #6e6258;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+.modal-price-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.modal-price-old {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  color: #3a3530;
+  text-decoration: line-through;
+}
+
+.modal-price-sale {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #e8c84a;
+  letter-spacing: 0.03em;
+}
+
+.modal-price-regular {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #d4af37;
+  letter-spacing: 0.03em;
+}
+
+/* ── Login Nudge (shown when user is not signed in) ─ */
+.modal-login-nudge {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  color: #6e6258;
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  border-radius: 4px;
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.2s, color 0.2s;
+}
+.modal-login-nudge:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  color: #d4af37;
+}
+
+/* ── Modal Actions ──────────────────────────────── */
+.modal-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.modal-cart-btn {
+  flex: 1;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #080808;
+  background: #d4af37;
+  border: none;
+  border-radius: 3px;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.modal-cart-btn:hover {
+  background: #e8c84a;
+  transform: translateY(-1px);
+}
+
+.modal-fav-btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  color: #8a7f74;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.modal-fav-btn:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+  color: #d4af37;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 640px) {
+  .modal-card       { flex-direction: column; }
+  .modal-img        { width: 100%; min-width: unset; height: 260px; padding: 1.25rem; }
+  .products-section { padding: 1.5rem; }
+}

@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Overlay ────────────────────────────────────── */
+.login-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 14, 8, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* ── Card ───────────────────────────────────────── */
+.login-card {
+  background: #211c16;
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: 16px;
+  padding: 2.75rem 2.25rem 2rem;
+  width: 90%;
+  max-width: 360px;
+  text-align: center;
+  position: relative;
+  animation: modalEntrance 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes modalEntrance {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Close Button ───────────────────────────────── */
+.login-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.1rem;
+  background: none;
+  border: none;
+  color: #4a4540;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.15s;
+}
+.login-close:hover { color: #e8dcc8; }
+
+/* ── Brand ──────────────────────────────────────── */
+.login-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #d4af37;
+  letter-spacing: 0.1em;
+  margin: 0 0 1.75rem;
+}
+
+/* ── Step Container ─────────────────────────────── */
+.login-step {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  text-align: left;
+}
+
+.login-step h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #e8dcc8;
+  margin: 0;
+  text-align: center;
+}
+
+.login-step p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  color: #6b5f4e;
+  margin: 0 0 0.25rem;
+  text-align: center;
+}
+
+/* ── Input ──────────────────────────────────────── */
+.login-step input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #17120d;
+  border: 1px solid #3a3028;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #e8dcc8;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.login-step input::placeholder { color: #3d3228; }
+.login-step input:focus { border-color: rgba(212, 175, 55, 0.5); }
+
+/* ── Error ──────────────────────────────────────── */
+.login-error {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  color: #e74c3c;
+  margin: 0;
+}
+
+/* ── Primary Button ─────────────────────────────── */
+.login-btn {
+  width: 100%;
+  background: #d4af37;
+  color: #17120d;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.login-btn:hover  { background: #e8c84a; transform: translateY(-1px); }
+.login-btn:active { transform: translateY(0); }
+.login-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+/* ── Secondary Button ───────────────────────────── */
+.login-btn--secondary {
+  background: transparent;
+  color: #6b5f4e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.login-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: #e8dcc8;
+}
+
+/* ── Button Group ───────────────────────────────── */
+.login-btn-group {
+  display: flex;
+  gap: 0.6rem;
+}
+.login-btn-group .login-btn { margin-top: 0; }
+
+/* ── Footer Note ────────────────────────────────── */
+.login-footer-note {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  color: #4a4540;
+  margin: 1.25rem 0 0;
+  text-align: center;
+}
+
+.login-link-btn {
+  background: none;
+  border: none;
+  color: #d4af37;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 0.15s;
+}
+.login-link-btn:hover { opacity: 0.75; }

@@ -1,0 +1,25 @@
+/* ── App root ────────────────────────────────────── */
+.app-root {
+  background: #0f0f0f;
+  min-height: 100vh;
+}
+
+/* ── Cart overlay ────────────────────────────────── */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 500;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-drawer {
+  height: 100%;
+  animation: slideInRight 0.25s ease;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
