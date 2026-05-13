@@ -21,10 +21,8 @@ function Home({ category, addToCart, favorites, toggleFavorite, user, onLoginOpe
       });
   }, []);
 
-  const inStock = products.filter(p => p.stock === undefined || p.stock > 0);
-
   const filtered = (() => {
-    const list = category === "All" ? inStock : inStock.filter(p => p.cat === category);
+    const list = category === "All" ? products : products.filter(p => p.cat === category);
     if (sortBy === "price-asc")  return list.slice().sort((a, b) => a.price - b.price);
     if (sortBy === "price-desc") return list.slice().sort((a, b) => b.price - a.price);
     if (sortBy === "az")         return list.slice().sort((a, b) => a.name.localeCompare(b.name));

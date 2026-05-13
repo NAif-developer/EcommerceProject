@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const Product = require('./models/Product.cjs');
-// الصور تفضل تكون CDN او PNG
+//                                                 الصور تفضل تكون CDN او PNG
 const products = [
 
   {

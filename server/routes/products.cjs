@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     const products = await Product.find(filter).sort({ createdAt: -1 });
     res.json(products);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error: err.message }); // 500 for db crashes
   }
 });
 
