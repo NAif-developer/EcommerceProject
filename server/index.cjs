@@ -6,6 +6,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 
@@ -13,6 +14,11 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/products', require('./routes/products.cjs'));
+app.use(express.static(path.join(__dirname, '../app/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../app/dist/index.html'));
+});
 
 
 async function start() {

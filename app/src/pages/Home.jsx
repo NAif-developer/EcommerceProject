@@ -8,7 +8,7 @@ function Home({ category, addToCart, favorites, toggleFavorite, user, onLoginOpe
   const [sortBy, setSortBy] = useState("default");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/products")
+    fetch("https://ecommerce-project-naiiiiif24-dev.apps.rm1.0a51.p1.openshiftapps.com/api/products")
       .then(res => res.json())
       .then(data => {
         console.log("products loaded:", data.length);
