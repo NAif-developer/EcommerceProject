@@ -1,1 +1,18 @@
-{"type":"commonjs","name":"server","version":"1.0.0","description":"","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"keywords":[],"author":"","license":"ISC","dependencies":{"@dotenvx/dotenvx":"^1.65.0","cors":"^2.8.6","dotenv":"^17.4.2","express":"^5.2.1","mongodb":"^7.2.0","mongoose":"^9.6.1","multer":"^2.1.1"}}
+{
+  "type": "commonjs",
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.cjs",
+  "scripts": {
+    "start": "node index.cjs"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.65.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongodb": "^7.2.0",
+    "mongoose": "^9.6.1",
+    "multer": "^2.1.1"
+  }
+}
