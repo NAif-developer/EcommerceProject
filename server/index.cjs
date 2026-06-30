@@ -2,6 +2,7 @@ const { setServers } = require('node:dns/promises');
 setServers(['1.1.1.1', '8.8.8.8']);
 
 require('dotenv').config();
+console.log("RUNNING INDEX.CJS WITH REACT FRONTEND");
 
 const mongoose = require('mongoose');
 const express = require('express');
