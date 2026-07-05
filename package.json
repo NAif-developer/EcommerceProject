@@ -1,0 +1,8 @@
+{
+  "name": "ecommerce-project",
+  "private": true,
+  "scripts": {
+    "install-all": "cd app && npm install && npm run build",
+    "start": "cd server && npm start"
+  }
+}
