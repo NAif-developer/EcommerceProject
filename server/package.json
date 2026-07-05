@@ -3,9 +3,12 @@
   "name": "server",
   "version": "1.0.0",
   "main": "index.cjs",
-  "scripts": {
-    "start": "node index.cjs"
-  },
+ "scripts": {
+  "build": "cd app && npm install && npm run build",
+  "start": "node index.cjs"
+
+}
+  ,
   "dependencies": {
     "@dotenvx/dotenvx": "^1.65.0",
     "cors": "^2.8.6",
