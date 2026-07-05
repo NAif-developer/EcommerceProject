@@ -4,8 +4,9 @@
   "version": "1.0.0",
   "main": "index.cjs",
  "scripts": {
-  "build": "cd app && npm install && npm run build",
+  "postinstall": "cd app && npm install && npm run build",
   "start": "node index.cjs"
+
 
 }
   ,
