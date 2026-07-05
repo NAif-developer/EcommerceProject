@@ -3,11 +3,9 @@
   "name": "server",
   "version": "1.0.0",
   "main": "index.cjs",
- "scripts": {
-  "postinstall": "cd app && npm install && npm run build",
+"scripts": {
+  "postinstall": "cd ../app && npm install && npm run build",
   "start": "node index.cjs"
-
-
 }
   ,
   "dependencies": {
