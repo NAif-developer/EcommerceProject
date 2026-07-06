@@ -17,7 +17,7 @@ app.use(express.json());
 app.use('/api/products', require('./routes/products.cjs'));
 app.use(express.static(path.join(__dirname, '../app/dist')));
 
-app.get('*', (req, res) => {
+app.get(/.*/, (req, res) => {
   res.sendFile(path.join(__dirname, '../app/dist/index.html'));
 });
 
