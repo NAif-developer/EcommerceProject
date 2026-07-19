@@ -1,0 +1,178 @@
+{
+    "root_group": {
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {},
+        "checks": {
+                "website opened successfully": {
+                    "name": "website opened successfully",
+                    "path": "::website opened successfully",
+                    "id": "a441c673215636b0688bc754824f1f67",
+                    "passes": 1018,
+                    "fails": 0
+                },
+                "products loaded successfully": {
+                    "path": "::products loaded successfully",
+                    "id": "2d34db1f0d8fcad7d24ab49a1540cadd",
+                    "passes": 1018,
+                    "fails": 0,
+                    "name": "products loaded successfully"
+                },
+                "product list is not empty": {
+                    "path": "::product list is not empty",
+                    "id": "88f567ad905e7f84e31c11e03bbbac07",
+                    "passes": 1018,
+                    "fails": 0,
+                    "name": "product list is not empty"
+                },
+                "product added to cart": {
+                    "id": "58a186c6d25f865981810b85cd7185c2",
+                    "passes": 1018,
+                    "fails": 0,
+                    "name": "product added to cart",
+                    "path": "::product added to cart"
+                },
+                "cart loaded successfully": {
+                    "name": "cart loaded successfully",
+                    "path": "::cart loaded successfully",
+                    "id": "d49b92d595c5ec0014e9ff17c880f2da",
+                    "passes": 1018,
+                    "fails": 0
+                },
+                "cart response is an array": {
+                    "path": "::cart response is an array",
+                    "id": "6efb1b5a0de753468a5b4d5d0e043eda",
+                    "passes": 1018,
+                    "fails": 0,
+                    "name": "cart response is an array"
+                },
+                "product removed from cart": {
+                    "path": "::product removed from cart",
+                    "id": "95e88e91efd9b23798ac41a5f273de39",
+                    "passes": 1018,
+                    "fails": 0,
+                    "name": "product removed from cart"
+                }
+            }
+    },
+    "metrics": {
+        "iterations": {
+            "count": 1018,
+            "rate": 28.774515922898473
+        },
+        "http_req_blocked": {
+            "avg": 52.88197911591358,
+            "min": 0,
+            "med": 0,
+            "max": 1546.1039,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "iteration_duration": {
+            "p(95)": 7938.347929999995,
+            "avg": 6161.002261493121,
+            "min": 5141.1999,
+            "med": 5878.0349,
+            "max": 8214.7337,
+            "p(90)": 7799.909360000001
+        },
+        "http_reqs": {
+            "count": 5090,
+            "rate": 143.87257961449237
+        },
+        "http_req_connecting": {
+            "min": 0,
+            "med": 0,
+            "max": 505.5834,
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 15.434138271119846
+        },
+        "http_req_duration": {
+            "p(90)": 604.3357100000009,
+            "p(95)": 823.5516900000014,
+            "avg": 378.7268545186639,
+            "min": 170.1415,
+            "med": 323.3936,
+            "max": 1823.3473,
+            "thresholds": {
+                "p(95)<2000": false
+            }
+        },
+        "data_sent": {
+            "rate": 45222.345800633855,
+            "count": 1599900
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 5090,
+            "thresholds": {
+                "rate<0.01": false
+            },
+            "value": 0
+        },
+        "vus": {
+            "value": 13,
+            "min": 13,
+            "max": 200
+        },
+        "vus_max": {
+            "min": 200,
+            "max": 200,
+            "value": 200
+        },
+        "checks": {
+            "passes": 7126,
+            "fails": 0,
+            "thresholds": {
+                "rate>0.95": false
+            },
+            "value": 1
+        },
+        "http_req_sending": {
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0.009573300589390965,
+            "min": 0,
+            "med": 0,
+            "max": 1.3519
+        },
+        "http_req_receiving": {
+            "avg": 14.722059017681733,
+            "min": 0,
+            "med": 0,
+            "max": 1154.0192,
+            "p(90)": 1.8689400000000056,
+            "p(95)": 189.79017
+        },
+        "data_received": {
+            "count": 48607136,
+            "rate": 1373916.3151262195
+        },
+        "http_req_tls_handshaking": {
+            "p(95)": 0,
+            "avg": 23.72262709233793,
+            "min": 0,
+            "med": 0,
+            "max": 789.4671,
+            "p(90)": 0
+        },
+        "http_req_waiting": {
+            "p(90)": 585.5365800000001,
+            "p(95)": 776.5020050000003,
+            "avg": 363.9952222003929,
+            "min": 170.1415,
+            "med": 289.2813,
+            "max": 1703.8993
+        },
+        "http_req_duration{expected_response:true}": {
+            "med": 323.3936,
+            "max": 1823.3473,
+            "p(90)": 604.3357100000009,
+            "p(95)": 823.5516900000014,
+            "avg": 378.7268545186639,
+            "min": 170.1415
+        }
+    }
+}
