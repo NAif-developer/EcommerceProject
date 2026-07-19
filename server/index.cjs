@@ -15,6 +15,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/products', require('./routes/products.cjs'));
+app.use('/api/cart', require('./routes/cart.cjs'));
+app.use('/api/wishlist', require('./routes/wishlist.cjs'));
+
 app.use(express.static(path.join(__dirname, '../app/dist')));
 
 app.get(/.*/, (req, res) => {
